@@ -1,0 +1,29 @@
+game overview:
+In the final project , I try my hand at 3D project , this is the first time that I have worked with code and 3D graphics so much . The project that I chose is a classic game, which is chess.
+Rules and key concept
+Conceptually, I make a chessboard that is 8 * 8 and arrange the chess pieces to look like they are outside.
+For each type of chess piece, I will specify a certain way from which we can develop further.
+I create a chess board for 2 players that will default to the one specified to go first (the white piece).
+then,  I think I need a pointer or something to be able to specify and move the pieces on the board and will create it simultaneously with the chess pieces when Start Game .
+I also found that in order to be multidimensional and more controllable, there needs to be a function that makes the whole chessboard block rotate in 3D space at a predetermined speed and rules.
+Deployment ideas
+With that concept, I will create 3 main scripts including:
+Main.js : Handling the main work, contains the setup and draw functions
+Piece.js : Processing that specializes in drawing pieces in 3D as well as a movable cursor for selecting pieces and their methods
+Camera.js : Handling the move, rotate the chessboard at different angles
+All scripts will be appended to index.html (as shown below).
+Progress details
+Chessboard Setup
+Creating an array board, adding a color from the ColorList, and push that color to any position on the board. The color is also saved in the ColorList during setup.
+Drawing chess pieces and pushing them in the chess board.
+First of all in script piece.js, we create a Piece class with 2 methods that are Show() and Move().
+In the Show method, we draw each chess piece on the chessboard corresponding to another array that we declared in the Setup section. This array provides us a map of the chessboard or in other words, that isis the arrangement of chess pieces on the chessboard, denoted by a mnemonic. We'll push the chess pieces up by setting the pieces an initial size type and then calling each type by the Show method. Even the specified cell or a cusorPiece pointer is pushed up, treated as an object of Piece, it will play an important and intermediate role in the next part.
+Making chess pieces moveable and handling Logic
+Now, I need to figure out how to get these chess pieces to move
+I also need to see when a player wins or stops the game
+How to move the cursor, and how do the chess  pieces interact with it?
+etc
+My solution is:
+In the move method of the Piece class, I'll utilize the identical move for both the pointer and the chess pieces.
+I will use the spacebar ( KEY = 32 ) and Enter ( KEY = 13 ) to select the chess  pieces and move the chess pieces  respectively.
+With KEY = 32, I I would consider that the cursor coincides with the chess piece, then it will be yellow (that is  selecting ).
